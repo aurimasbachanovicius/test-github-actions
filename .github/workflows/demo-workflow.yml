@@ -1,0 +1,15 @@
+name: Demo workflow
+
+on:
+  workflow_run:
+    workflows: [ "Merge to demo" ]
+    types:
+      - completed
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build something nice.
+        run: echo "Bob the Builder"

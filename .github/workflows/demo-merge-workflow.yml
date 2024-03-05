@@ -1,0 +1,25 @@
+name: Merge to demo
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Merge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: 'demo'
+
+      - name: Merge PR to Demo environment
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git merge --no-edit --no-ff origin/$GITHUB_HEAD_REF
+          git push -u origin demo
