@@ -25,3 +25,5 @@ jobs:
           git merge --no-edit --no-ff origin/$GITHUB_HEAD_REF
           git push -u origin demo
           echo "done"
+
+      - uses: aurimasbachanovicius/flowlink
