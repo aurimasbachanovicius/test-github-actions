@@ -27,5 +27,3 @@ jobs:
           echo "done"
 
       - uses: aurimasbachanovicius/flowlink@main
-        with:
-          ACTIONS_STEP_DEBUG: 'true'
