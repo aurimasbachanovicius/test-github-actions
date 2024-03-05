@@ -29,5 +29,5 @@ jobs:
       - uses: aurimasbachanovicius/flowlink@main
         with:
           github-token: ${{ secrets.PAT }}
-          workflow: 'demo-merge-workflow.yml'
+          workflow: 'demo-workflow.yml'
           branch: 'demo'
