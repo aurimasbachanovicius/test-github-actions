@@ -26,4 +26,4 @@ jobs:
           git push -u origin demo
           echo "done"
 
-      - uses: aurimasbachanovicius/flowlink
+      - uses: aurimasbachanovicius/flowlink@main
