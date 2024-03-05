@@ -27,3 +27,7 @@ jobs:
           echo "done"
 
       - uses: aurimasbachanovicius/flowlink@main
+        with:
+          github-token: ${{ secrets.PAT }}
+          workflow: 'demo-merge-workflow.yml'
+          branch: 'demo'
