@@ -23,3 +23,20 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git merge --no-edit --no-ff origin/$GITHUB_HEAD_REF
           git push -u origin demo
+  notify:
+    name: Notify
+    runs-on: ubuntu-latest
+    needs: [ build ]
+    steps:
+      - name: Trigger Demo workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'demo-workflow.yml',
+              ref: 'demo',
+            })
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
