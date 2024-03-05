@@ -14,6 +14,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: 'demo'
+          token: ${{ secrets.PAT }}
 
       - name: Merge PR to Demo environment
         env:
@@ -23,3 +24,4 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git merge --no-edit --no-ff origin/$GITHUB_HEAD_REF
           git push -u origin demo
+          echo "done"
