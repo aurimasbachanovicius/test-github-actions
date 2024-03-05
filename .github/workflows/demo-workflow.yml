@@ -1,11 +1,10 @@
 name: Demo workflow
 
 on:
-#  workflow_run:
-#    workflows: [ "Merge to demo" ]
-#    types:
-#      - completed
-  workflow_dispatch:
+  workflow_run:
+    workflows: [ "Merge to demo" ]
+    types:
+      - completed
 
 jobs:
   build:
