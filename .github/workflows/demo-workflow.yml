@@ -15,3 +15,8 @@ jobs:
     steps:
       - name: Build something nice.
         run: echo "Bob the Builder"
+      - name: Go rest 10 sec.
+        run: sleep 10
+      - name: Work is done, go home
+        run: sleep 10
+
